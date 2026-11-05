@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendence Tracker Pro</title>
-    <link rel = "stylesheet" href = "style.css"></llink>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Tracker Pro</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class = "app">
-        <header class = "top">
-            <h1>📚 Attendence Pro</h1>
-            <button id = "themeBtn" class = "ghost">🌙</button>
-        </header>
-        <nav class = "tabs">
-            <button class = "tab active" data-tab = "dashboard">Dashboard</button>
-            <button class = "tab" data-tab = "mark">Mark Attendance</button>
-            <button class = "tab" data-tab = "history">History</button>
-        </nav>
+  <div class="app">
+    <header class="top">
+      <h1>📚 Attendance Pro</h1>
+      <button id="themeBtn" class="ghost">🌙</button>
+    </header>
 
-        <section id = "tab-dashboard">
-            <div class = "summary" id = "summary"></div>
-            <div class = "row">
-                <label for = "targetInput">Default required %</label>
-                <input type = "number" id = "targetInput" min = "1" max = "100" class = "small">
-            </div>
+    <nav class="tabs">
+      <button class="tab active" data-tab="dashboard">Dashboard</button>
+      <button class="tab" data-tab="mark">Mark</button>
+      <button class="tab" data-tab="history">History</button>
+    </nav>
 
-            <details class = "add-box" open>
-                <summary>➕Add a subject</summary>
-                <div class = "form">
-                    <input type = "text" id = "anmeInput" placeholder = "Subject name">
-                    <input type = "number" id = "attendedInput" placeholder = "Classes attended so far" min = "0">
-                    <input type = "number" id = "totalInput" placeholder = "tOtal classes held so far" min = "0">
-                    <input type = "number" id = "subTargetInput" placeholder = "Own target % (optional)" min = "1" max = "100">
-                    <button id = "addBtn">Add subject</button>
-                    <p class = "error" id = "error"></p>
-                 </div>
-            </details>
+    <section id="tab-dashboard">
+      <div class="summary" id="summary"></div>
 
-            <div id = "subjectList"></div>
+      <div class="row">
+        <label for="targetInput">Default required %</label>
+        <input type="number" id="targetInput" min="1" max="100" class="small">
+      </div>
 
-            <div class = "backup">
-                <button id = "exportBtn" class = ghost>⬇ Export backup</button>
-                <label class = "ghost file-label">⬆ Import backup
-                    <input type = "file" id = "importFile" accept = ".json" hidden>
-                </label>
-            </div>
-        </section>
-        <section id = "tab-mark" class = "hidden">
-            <div class = "row">
-                <label for = "dataInput">Date</label>
-                <input type = "data" id = "dataInput">
-            </div>
-            <div id = "markList"></div>
-        </section>
-        <section id = "tab-history" class = "hidden">
-            <div class = "row">
-                <label for = "historyFilter">Show</label>
-                <select id = "historyFilter"></select>
-            </div>
-            <div id = "historyList"></div>
-        </section>
-    </div>
-    <script src = "script.js"></script>
+      <details class="add-box" open>
+        <summary>➕ Add a subject</summary>
+        <div class="form">
+          <input type="text" id="nameInput" placeholder="Subject name">
+          <input type="number" id="attendedInput" placeholder="Classes attended so far" min="0">
+          <input type="number" id="totalInput" placeholder="Total classes held so far" min="0">
+          <input type="number" id="subTargetInput" placeholder="Own target % (optional)" min="1" max="100">
+          <button id="addBtn">Add subject</button>
+          <p class="error" id="error"></p>
+        </div>
+      </details>
+
+      <div id="subjectList"></div>
+
+      <div class="backup">
+        <button id="exportBtn" class="ghost">⬇ Export backup</button>
+        <label class="ghost file-label">⬆ Import backup
+          <input type="file" id="importFile" accept=".json" hidden>
+        </label>
+      </div>
+    </section>
+
+    <section id="tab-mark" class="hidden">
+      <div class="row">
+        <label for="dateInput">Date</label>
+        <input type="date" id="dateInput">
+      </div>
+      <div id="markList"></div>
+    </section>
+
+    <section id="tab-history" class="hidden">
+      <div class="row">
+        <label for="historyFilter">Show</label>
+        <select id="historyFilter"></select>
+      </div>
+      <div id="historyList"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
